@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compteur de Sobriété</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Écran de configuration -->
+    <div id="setup-screen" class="screen active">
+      <div class="setup-card">
+        <div class="logo">🌱</div>
+        <h1>Votre Voyage de Sobriété</h1>
+        <p class="subtitle">Chaque jour sans alcool est une victoire.</p>
+
+        <div class="form-group">
+          <label for="start-date">Quand avez-vous arrêté de boire ?</label>
+          <input type="datetime-local" id="start-date" />
+        </div>
+
+        <div class="form-group">
+          <label for="user-name">Votre prénom (optionnel)</label>
+          <input type="text" id="user-name" placeholder="ex: Marie" maxlength="30" />
+        </div>
+
+        <button class="btn-primary" id="start-btn">Commencer mon compteur</button>
+      </div>
+    </div>
+
+    <!-- Écran principal -->
+    <div id="main-screen" class="screen">
+
+      <header class="header">
+        <div class="greeting" id="greeting">Bonjour !</div>
+        <button class="btn-menu" id="menu-btn" title="Options">⚙️</button>
+      </header>
+
+      <!-- Compteur principal -->
+      <section class="counter-section">
+        <div class="counter-ring">
+          <div class="counter-inner">
+            <span class="days-count" id="days-count">0</span>
+            <span class="days-label">jours</span>
+          </div>
+        </div>
+        <div class="time-details">
+          <div class="time-unit">
+            <span id="hours-count">00</span>
+            <small>heures</small>
+          </div>
+          <div class="separator">:</div>
+          <div class="time-unit">
+            <span id="minutes-count">00</span>
+            <small>minutes</small>
+          </div>
+          <div class="separator">:</div>
+          <div class="time-unit">
+            <span id="seconds-count">00</span>
+            <small>secondes</small>
+          </div>
+        </div>
+        <div class="start-info">
+          Sobre depuis le <span id="start-date-display"></span>
+        </div>
+      </section>
+
+      <!-- Paliers de progression -->
+      <section class="milestones-section">
+        <h2>Étapes franchies</h2>
+        <div class="milestones-grid" id="milestones-grid"></div>
+      </section>
+
+      <!-- Citation motivante -->
+      <section class="quote-section">
+        <div class="quote-card" id="quote-card">
+          <p class="quote-text" id="quote-text"></p>
+        </div>
+        <button class="btn-secondary" id="new-quote-btn">Nouvelle citation ✨</button>
+      </section>
+
+      <!-- Stats de santé -->
+      <section class="health-section">
+        <h2>Bénéfices pour la santé</h2>
+        <div class="health-grid" id="health-grid"></div>
+      </section>
+
+    </div>
+
+    <!-- Menu options -->
+    <div id="menu-overlay" class="overlay hidden">
+      <div class="menu-card">
+        <h3>Options</h3>
+        <button class="btn-secondary" id="change-date-btn">Modifier la date de début</button>
+        <button class="btn-danger" id="reset-btn">Recommencer à zéro</button>
+        <button class="btn-ghost" id="close-menu-btn">Fermer</button>
+      </div>
+    </div>
+
+    <!-- Modal de confirmation reset -->
+    <div id="confirm-overlay" class="overlay hidden">
+      <div class="menu-card">
+        <div class="confirm-icon">⚠️</div>
+        <h3>Recommencer à zéro ?</h3>
+        <p>Cela supprimera votre compteur actuel.<br />Vous pourrez définir une nouvelle date.</p>
+        <button class="btn-danger" id="confirm-reset-btn">Oui, recommencer</button>
+        <button class="btn-ghost" id="cancel-reset-btn">Annuler</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
