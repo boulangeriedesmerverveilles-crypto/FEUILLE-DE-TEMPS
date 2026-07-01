@@ -5,7 +5,7 @@ import './global.css';
 import introVegetale from './scenes/introVegetale?scene';
 import defileProduits from './scenes/defileProduits?scene';
 import carteAdresse from './scenes/carteAdresse?scene';
-// import annonce from './scenes/annonce?scene'; // carte texte (fermeture, horaires…)
+import annonce from './scenes/annonce?scene'; // carte texte (fermeture, horaires…)
 
 // --- FORMAT DE SORTIE ---
 // Le format (taille), le fond et le fps sont pilotés par src/project.meta
