@@ -1,0 +1,17 @@
+/*
+ * Chargement des polices pour le rendu.
+ * Importé une seule fois dans src/project.ts : import './global.css';
+ *
+ * IMPORTANT pour le rendu : au premier lancement, laisser 2-3 s à l'éditeur
+ * pour que la police se charge avant de rendre, sinon la 1re frame peut sortir
+ * en police système. Pour un rendu 100 % déterministe (batch, CI), préférer la
+ * version locale @fontsource (voir references/projet-installation-rendu.md).
+ */
+
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource/cormorant-garamond/700.css';
+@import '@fontsource/cormorant-garamond/500-italic.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';

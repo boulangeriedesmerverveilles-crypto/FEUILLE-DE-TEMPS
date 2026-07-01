@@ -30,6 +30,7 @@ await page.waitForFunction(
     const el = document.querySelector('#render');
     return el && !el.hasAttribute('data-rendering');
   },
+  undefined,
   {timeout: 5 * 60 * 1000},
 );
 console.log('rendering finished');
