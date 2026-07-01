@@ -2,10 +2,12 @@ import { makeScene2D, Txt, Rect, Layout, Img } from '@motion-canvas/2d';
 import {
   createRef,
   all,
+  loop,
   sequence,
   waitFor,
   easeOutCubic,
   easeOutBack,
+  easeInOutSine,
 } from '@motion-canvas/core';
 
 import { COULEURS, POLICES, MARQUE, FORMATS, zonesSures } from '../charte-bdm';
@@ -91,7 +93,7 @@ export default makeScene2D(function* (view) {
         padding={[36, 46]}
         scale={0}
       >
-        <Img src={ANNONCE.qr} width={340} height={340} />
+        <Img src={ANNONCE.qr} width={380} height={380} />
         <Txt
           text={ANNONCE.qrLegende}
           fontFamily={POLICES.legende}
@@ -142,5 +144,12 @@ export default makeScene2D(function* (view) {
   yield* qrCarte().scale(1, 0.6, easeOutBack);
   yield* sequence(0.15, ...etapesRefs.map(r => r().opacity(1, 0.4)));
   yield* note().opacity(1, 0.4);
-  yield* waitFor(2.2);
+
+  // On insiste sur le Click & Collect : la carte QR respire doucement pour
+  // attirer l'œil et on tient le plan bien plus longtemps, le temps de
+  // vraiment scanner (une photo figée paraît morte et se scanne mal).
+  yield loop(Infinity, function* () {
+    yield* qrCarte().scale(1.05, 0.8, easeInOutSine).to(1, 0.8, easeInOutSine);
+  });
+  yield* waitFor(5.5);
 });
