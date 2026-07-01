@@ -64,6 +64,7 @@ export default makeScene2D(function* (view) {
       {/* Badge prix (auto-dimensionné), au-dessus du bandeau */}
       <Rect
         ref={badge}
+        layout
         fill={COULEURS.or}
         radius={14}
         padding={[14, 30]}

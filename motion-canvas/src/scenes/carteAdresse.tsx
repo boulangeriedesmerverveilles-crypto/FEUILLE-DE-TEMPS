@@ -65,7 +65,7 @@ export default makeScene2D(function* (view) {
         fontFamily={POLICES.titre}
         fontStyle={'italic'}
         fontSize={34}
-        fill={COULEURS.or}
+        fill={COULEURS.chocolat}
         opacity={0}
         y={zone.basLegende + 120}
       />
