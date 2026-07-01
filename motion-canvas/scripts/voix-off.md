@@ -31,3 +31,14 @@ espeak-ng -v mb-fr4 -s 155 "Votre texte ici." -w segment.wav
 
 Si le texte ou l'ordre des scènes change, la durée de chaque segment doit être
 recalculée pour rester synchronisée.
+
+## Voix off Click & Collect (`voix-off-click-collect.mp3`)
+
+Même procédé, pour la vidéo dédiée `[ccAccroche, ccCommande, ccGamme, carteAdresse]` :
+
+| Scène | Durée | Texte |
+|---|---|---|
+| ccAccroche | 4,5 s | Vos produits préférés, sans faire la queue ? C'est possible. |
+| ccCommande | 9,5 s | Scannez le QR code de la Boulangerie des Merveilles, choisissez vos produits, et validez votre commande avant dix-neuf heures. Elle se prépare pendant que vous dormez. |
+| ccGamme | 6,5 s | Pain de campagne, sandwichs gourmands, formules, barbajuans... toute la carte est en ligne. |
+| carteAdresse | 5,0 s | Dès sept heures le lendemain, votre commande vous attend. Cinq, place de la République, à Tende. |
