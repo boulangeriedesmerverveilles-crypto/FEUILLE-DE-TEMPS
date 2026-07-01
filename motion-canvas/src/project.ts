@@ -15,8 +15,9 @@ import formuleSandwich from './scenes/formuleSandwich?scene'; // carte Formule S
 // makeProject. Garder src/project.meta aligné sur FORMATS.vertical /
 // COULEURS.vertAnis / FPS de charte-bdm.ts en cas de changement de format.
 export default makeProject({
-  // Vidéo type : intro végétale → défilé produits → carte adresse.
+  // Vidéo "tout ce qu'on a déjà" : intro → pain → click & collect → formule
+  // sandwich → carte adresse. Variantes précédentes gardées en commentaire :
   // scenes: [introVegetale, defileProduits, carteAdresse],
-  // Vidéo promo Click & Collect + Formule Sandwich (actuellement active) :
-  scenes: [annonce, formuleSandwich],
+  // scenes: [annonce, formuleSandwich],
+  scenes: [introVegetale, defileProduits, annonce, formuleSandwich, carteAdresse],
 });
